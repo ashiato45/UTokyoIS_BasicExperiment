@@ -1,0 +1,38 @@
+# 間違い
+getstr中のstaticな変数bufは、プログラム中で一つだけ確保される変数で、その値は関数が終了してもプログラムが実行されている間保持されている。つまり、関数の実行毎に領域を確保しているわけではないので、getstrはNULLでなければ同じ変数bufへのポインタを返し続けることになる。結果最後に入力したものだけが3回表示される。
+
+# 修正案
+一つは二重配列にして記憶することだが、元のコードを生かすと動的にメモリを確保するほうがよい気がするので、次のようにした。
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char *getstr()
+{
+  char* buf;
+  buf = malloc(100);
+  int x;
+  
+  x = scanf("%99s", buf);
+
+  return (x == EOF) ? NULL : buf;
+}
+
+int main()
+{
+    char *s[3];
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        s[i] = getstr();
+    }
+
+    for (i = 2; 0 <= i; i--) {
+        if (s[i] != NULL)
+            printf("%s\n", s[i]);
+	free(s[i]);
+    }
+
+    return 0;
+}
+

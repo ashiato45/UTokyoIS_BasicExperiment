@@ -1,0 +1,50 @@
+# 問題点
+substrで割りあてたメモリを開放していない。
+
+#解決策
+開放すればよい。割り当てたメモリは
+printf("%s\n", s[i]);
+で使い終っているので、ここで開放して、	
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+char *substr(char *s)
+{
+    int i = 0;
+    char *buf;
+
+    buf = malloc(strlen(s) + 1);
+    strcpy(buf, s);
+    while (buf[i] != '\0') {
+        if (buf[i] == 'a')
+            break;
+        i++;
+    }
+
+    return buf + i;
+}
+
+int main()
+{
+    char buf[100] = "";
+    char *s[3];
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        scanf("%99s", buf);
+        s[i] = substr(buf);
+        buf[0] = '\0';
+    }
+
+    for (i = 2; 0 <= i; i--) {
+        printf("%s\n", s[i]);
+	free(s[i]);
+    }
+
+
+    return 0;
+}
+
+とすればよい。

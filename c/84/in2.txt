@@ -1,0 +1,17 @@
+insert	apple	—ÑŒç
+insert	orange	ƒIƒŒƒ“ƒW
+insert	grape	•’“¸
+insert	pear	—œ
+insert	strawberry	ä•
+insert	raspberry	–Øä•
+insert	fig	–³‰Ô‰Ê
+insert	kaki	Š`
+insert	appricot	ˆÇ
+insert	peach	“
+search	orange
+insert	orange	–¨Š¹
+search	orange
+delete	orange
+search	orange
+search	strawberry
+quit

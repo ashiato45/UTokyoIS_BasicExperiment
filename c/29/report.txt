@@ -1,0 +1,40 @@
+# プログラム
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#define R (RAND_MAX/2)
+#define POINTS 1000000
+#define SQ(x) ((x)*(x))
+
+int main(){
+  int r = RAND_MAX/2;
+  int i;
+  int x, y;
+  int cnt = 0;
+  srand((unsigned int)time(NULL));
+  for(i = 0; i < POINTS; i++){
+    x = rand();
+    y = rand();
+    if(SQ(x - R) + SQ(y - R) <= SQ(R)){
+      cnt++;
+    }
+  }
+
+  printf("%d, %lf\n", cnt, (double)cnt/(double)POINTS*4);
+      
+  
+  
+  return 0;
+}
+
+# 実行結果
+# 実行結果
+$ gcc main.c
+$ ./a
+785927, 3.143708
+$ ./a
+785595, 3.142380
+$ ./a
+785554, 3.142216
+$ ./a
+785395, 3.141580
