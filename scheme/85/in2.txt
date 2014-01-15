@@ -1,0 +1,18 @@
+insert	apple	RINGO
+insert	orange	ORENJI
+insert	grape	BUDOU
+insert	pear	NASHI
+insert	strawberry	ICHIGO
+insert	raspberry	KICHIGO
+insert	fig	ICHIJIKU
+insert	kaki	KAKI
+insert	appricot	ANZU
+insert	peach	MOMO
+search	orange
+insert	orange	MIKAN
+display
+search	orange
+delete	orange
+search	orange
+search	strawberry
+quit

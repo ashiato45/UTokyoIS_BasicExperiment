@@ -1,0 +1,17 @@
+(let ((input->string
+       (lambda (x)
+         (cond
+          ((symbol? x) (symbol->string x))
+          ((number? x) (number->string x))
+          ((string? x) x)
+          (else #f)))))
+  (define (read-list l)
+    (let ((data (input->string (read))))
+      (if data (read-list (cons data l)) l)))
+  (define (display-list l)
+    (cond ((null? l) #t)
+          (else
+           (display (car l))
+           (newline)
+           (display-list (cdr l)))))
+  (display-list (my-sort (read-list (list)))))

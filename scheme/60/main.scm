@@ -1,0 +1,6 @@
+(define (f n)
+  (define (g n)
+    (if (< n 1) (cons 0 1)
+        (let ((a (g (- n 1))))
+          (cons (cdr a) (+ (car a) (cdr a))))))
+  (car (g n)))

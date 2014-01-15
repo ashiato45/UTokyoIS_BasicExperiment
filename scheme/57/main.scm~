@@ -1,0 +1,7 @@
+(define (fib2 n)
+  (define (fib-helper target now a b)
+    (if (< now target)
+	(fib-helper target (+ now 1) b (+ a b))
+	(b)))
+  (cond ((= n 0) 0)
+	(else (fib-helper n 1 0 1))))

@@ -1,0 +1,7 @@
+insert a A
+insert b B
+search a
+display
+delete b
+search b
+display
