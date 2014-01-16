@@ -1,8 +1,8 @@
 #include <stdio.h>
 extern int maxof2(int x, int y);
 int main(){
-  int a;
-  a = maxof2(3, 5);
-  printf("%d\n", a);
+  printf("%d\n", maxof2(3, 5));
+  printf("%d\n", maxof2(2, -2));
+  printf("%d\n", maxof2(2, 2));  
   return 0;
 }
