@@ -1,6 +1,0 @@
-insert b B
-insert a A
-insert c C
-display
-delete c
-display

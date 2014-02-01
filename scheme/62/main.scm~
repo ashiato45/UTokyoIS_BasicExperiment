@@ -1,9 +1,0 @@
-(define (my-reverse l)
-  (define (my-reverse-helper l acc)
-    (if (equal? l '())
-	acc
-	(let ((head (car l))
-	      (tail (cdr l)))
-	  (my-reverse-helper tail (cons acc head)))))
-  (my-reverse l '()))
-	
