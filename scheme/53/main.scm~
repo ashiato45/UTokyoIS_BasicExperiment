@@ -1,6 +1,0 @@
-(define (even<odd? a b c d e)
-  (define (count-even l acc)
-    (cond
-     ((null l) acc)
-     ((even? (car l)) (count-even (cdr l) (+ acc 1)))
-     (else (count-even (cdr l) acc)))))

@@ -1,8 +1,0 @@
-(define (my-assoc key dict)
-  (if (equal? dict nil)
-      #f
-      (let ((head (car dict))
-	    (tail (cdr dict)))
-	(if (= (car head) key)
-	    head
-	    (my-assoc key tail)))))
